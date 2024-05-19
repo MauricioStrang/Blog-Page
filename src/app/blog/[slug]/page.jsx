@@ -1,38 +1,37 @@
 import Image from 'next/image'
 import styles from './singlePost.module.css'
+import { getPost } from '../../../../lib/data';
+import PostUser from '@/components/postUser/postUser';
+import { Suspense } from 'react';
 
-const SinglePostPage = () => {
+const SinglePostPage = async({params}) => {
+    const {slug} = params;
+    const post = await getPost(slug)
+    console.log(post)
     return (
         <div className={styles.container}>
-            <div className={styles.imgContainer}>
+            {post.img && (<div className={styles.imgContainer}>
                 <Image 
-                src='https://images.pexels.com/photos/21972309/pexels-photo-21972309/free-photo-of-a-girl-with-red-hair-and-a-guitar-sitting-on-a-wall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                src={post.img}
                 alt="post picture" 
                 fill 
                 className={styles.img}/>
-            </div>
+            </div>)}
             <div className={styles.textContainer}>
-                <h1 className={styles.title}> Title</h1>
+                <h1 className={styles.title}>{post.title}</h1>
                 <div className={styles.detail}>
-                    <Image 
-                    className={styles.avatar} 
-                    src='https://images.pexels.com/photos/21972309/pexels-photo-21972309/free-photo-of-a-girl-with-red-hair-and-a-guitar-sitting-on-a-wall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                    alt='avatar img'
-                    width={50}
-                    height={50}
-            
-                    />
-                    <div className={styles.detailText}>
-                        <span className={styles.detailTitle}>Author</span>
-                        <span className={styles.detailValue}>Kanade Hernandez</span>
-                    </div>
+                    {post && (
+                    <Suspense fallback={<div>Loading...</div>}>
+                    <PostUser userId={post.userId}/>
+                    </Suspense>
+                    )}
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Published</span>
-                        <span className={styles.detailValue}>01.01.2024</span>
+                        <span className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</span>
                     </div>
                 </div>
                 <div className={styles.content}>
-                    cock cock cok cock cock cock cock cock cock cock penis xdddddddddddddddddddddddddddddddd
+                    {post.desc}
                 </div>
             </div>
         </div>

@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.texts{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    color: gray;
+    font-weight: bold;
+}
+
+.username{
+    font-weight: 500;
+}
+
+.avatar{
+    object-fit: cover;
+    border-radius: 50%;
+}
