@@ -4,6 +4,19 @@ import { getPost } from '../../../../lib/data';
 import PostUser from '@/components/postUser/postUser';
 import { Suspense } from 'react';
 
+
+export const generateMetadata = async ({params}) =>{
+    const {slug} = params;
+
+    const post = await getPost(slug);
+
+    return {
+        title: post.title,
+        description: post.desc,
+    };
+}
+
+
 const SinglePostPage = async({params}) => {
     const {slug} = params;
     const post = await getPost(slug)
