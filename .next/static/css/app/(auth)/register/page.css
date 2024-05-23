@@ -17,17 +17,17 @@
     gap: 30px;
     border-radius: 5px;
 }
-
-
-
-.register_form__n0G5m{
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/registerForm/registerForm.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+.registerForm_form__34EWm{
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 30px;
 }
 
-.register_form__n0G5m input{
+.registerForm_form__34EWm input{
     padding: 20px;
     background-color: var(--bg);
     color: var(--textColor);
@@ -35,7 +35,7 @@
     border-radius: 5px;
 }
 
-.register_form__n0G5m button {
+.registerForm_form__34EWm button {
     padding: 20px;
     cursor: pointer;
     background-color: var(--btn);
