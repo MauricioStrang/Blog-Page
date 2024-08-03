@@ -7,7 +7,6 @@ export const authConfig = {
         async jwt({token, user}){
             if(user){
                 token.id = user.id;
-                token.isAdmin = user.isAdmin;
             }
             return token;
         },
