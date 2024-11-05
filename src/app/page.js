@@ -5,7 +5,7 @@ const Home=() => {
   return <div className={styles.container}>
     <div className={styles.textContainer}>
       <h1 className={styles.title}>
-        The best Manga library.
+        The best Manga library. TODAY WE TAKE A DAY
       </h1>
       <p className={styles.desc}>lorem Ipsum penis penis penis penis penis penis penis penis penis</p>
       <div className={styles.buttons}>
@@ -13,7 +13,12 @@ const Home=() => {
         <button className={styles.button}>Contact</button>
       </div>
       <div className={styles.brands}>
-        <Image src='/brands.png' alt='' fill className={styles.brandImg}/>
+        <Image
+        src='/brands.png'
+        alt='' 
+        fill 
+        className={styles.brandImg}
+        />
       </div>
     </div>
     <div className={styles.imgContainer}>
